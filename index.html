@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+</head>
+<body>
+    <div id="message-container">
+        <div id="big-heart">
+            ❤️To My Bestest Friend❤️
+        </div>
+        <div id="main-message">
+            <!-- The main message will be typed out here using JavaScript -->
+        </div>
+    </div>
+    <script>
+        setTimeout(function () {
+            const bigHeart = document.getElementById("big-heart");
+            const mainMessage = document.getElementById("main-message");
+            
+            bigHeart.style.display = "none";
+            mainMessage.style.display = "block";
+
+            const message = `✨️Dear Niharika✨️,\n\nI wanted to take a moment to express just how incredibly special you are to me. Throughout all the ups and downs, twists and turns, you have been a constant source of joy, strength, and unwavering support. Our bond goes beyond friendship; you are like a sister to me, a true confidante who understands me in a way no one else does.\n\n❤️The laughter we've shared, the tears we've wiped away, and the countless memories we've created together have woven an unbreakable thread between us❤️. Your presence in my life has illuminated the darkest days and amplified the brightest moments. Your kindness, empathy, and genuine care for me have touched my heart in ways I can't even put into words.\n\nI count myself immensely fortunate to have you by my side, Niharika. Your wisdom, your encouragement, and your unwavering belief in me have propelled me forward in ways I couldn't have imagined. Your ability to always find the silver lining, to turn challenges into opportunities, is nothing short of inspiring.\n\nAs I reflect on our journey together, I am reminded of the countless adventures we've embarked upon, the inside jokes that only we understand, and the unspoken understanding that binds us together. You have enriched my life beyond measure, and I can't imagine navigating this world without you.\n\nSo, here's to you, Niharika – a beacon of light, a ray of sunshine, and a true sister to my soul. Thank you for being the incredible person you are and for gracing my life with your presence. Here's to many more laughter-filled days, heart-to-heart conversations, and unforgettable moments shared between us.\n\n💕With all my love and gratitude💕`;
+
+            let index = 0;
+            const typingSpeed = 50; // Adjust typing speed (in milliseconds)
+
+            function typeMessage() {
+                if (index < message.length) {
+                    mainMessage.innerHTML += message.charAt(index);
+                    index++;
+                    setTimeout(typeMessage, typingSpeed);
+                }
+            }
+
+            typeMessage();
+        }, 5000);
+    </script>
+</body>
+</html>
